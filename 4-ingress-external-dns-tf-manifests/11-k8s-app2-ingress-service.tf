@@ -30,7 +30,8 @@ resource "kubernetes_ingress_v1" "ingress_app2" {
       # Ingress Groups
       "alb.ingress.kubernetes.io/group.name" = "myapps.web"
       "alb.ingress.kubernetes.io/group.order" = 20
-    }    
+    }  
+    namespace = kubernetes_namespace_v1.ns_app2.metadata[0].name  
   }
 
   spec {

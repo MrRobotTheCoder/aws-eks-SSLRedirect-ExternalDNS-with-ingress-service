@@ -5,6 +5,7 @@ resource "kubernetes_deployment_v1" "myapp3" {
     labels = {
       app = "app3-nginx"
     }
+    namespace = kubernetes_namespace_v1.ns_app3.metadata[0].name
   } 
  
   spec {
